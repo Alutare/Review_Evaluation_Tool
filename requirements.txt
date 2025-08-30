@@ -1,0 +1,11 @@
+#Python 3.13.5
+kagglehub[pandas-datasets]
+scikit-learn==1.7.1
+nltk==3.9.1
+seaborn==0.13.2
+matpplotlib==3.10.5
+huggingface_hub==0.34.4
+ollama==0.5.3
+flask==3.1.2
+flask_cors==6.0.1
+flask_sqlalchemy==3.1.1

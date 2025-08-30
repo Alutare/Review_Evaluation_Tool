@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Review Legitimacy Detector</title>
+    <link rel="stylesheet" href="App.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <h1>Review Evaluation Tool</h1>
+        <p>Analyze reviews for authenticity and policy violations</p>
+      </header>
+
+      <main>
+        <!-- Tab Navigation -->
+        <div class="tab-container">
+          <div class="tab-buttons">
+            <button class="tab-btn active" data-tab="single-review">Single Review Analysis</button>
+            <button class="tab-btn" data-tab="csv-dashboard">CSV Dashboard</button>
+          </div>
+        </div>
+
+        <!-- Single Review Analysis Tab -->
+        <div id="single-review" class="tab-content active">
+          <div class="form-container">
+            <form id="reviewForm">
+              <div class="form-group">
+                <label for="reviewText">Review Text *</label>
+                <textarea 
+                  id="reviewText" 
+                  placeholder="Enter the review text you want to analyze..."
+                  rows="6"
+                  required
+                ></textarea>
+              </div>
+
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="placeName">Place Name (optional)</label>
+                  <input 
+                    type="text" 
+                    id="placeName" 
+                    placeholder="e.g., McDonald's, Starbucks"
+                  />
+                </div>
+
+                <div class="form-group">
+                  <label for="starRating">Star Rating (optional)</label>
+                  <select id="starRating">
+                    <option value="">Select rating</option>
+                    <option value="1">1 Star</option>
+                    <option value="2">2 Stars</option>
+                    <option value="3">3 Stars</option>
+                    <option value="4">4 Stars</option>
+                    <option value="5">5 Stars</option>
+                  </select>
+                </div>
+
+                <div class="form-group">
+                  <label for="businessType">Business Type (optional)</label>
+                  <select id="businessType">
+                    <option value="">Select type</option>
+                    <option value="restaurant">Restaurant</option>
+                    <option value="fast_food">Fast Food</option>
+                    <option value="coffee_shop">Coffee Shop</option>
+                    <option value="hotel">Hotel</option>
+                    <option value="retail">Retail Store</option>
+                    <option value="service">Service Business</option>
+                  </select>
+                </div>
+              </div>
+
+              <button type="button" id="analyzeBtn" class="analyze-btn">
+                Analyze Review
+              </button>
+            </form>
+          </div>
+
+          <div id="error" class="error" style="display: none;"></div>
+          <div id="results" class="results" style="display: none;"></div>
+        </div>
+
+        <!-- CSV Dashboard Tab -->
+        <div id="csv-dashboard" class="tab-content">
+          <div class="form-container">
+            <h2>CSV Dashboard Analysis</h2>
+            <p>Upload a CSV file containing review data to generate comprehensive insights and analytics.</p>
+            
+            <div class="csv-upload-section">
+              <div class="form-group">
+                <label for="csvFile">Upload CSV File</label>
+                <input type="file" id="csvFile" accept=".csv" />
+                <p class="file-info">Expected columns: review_text, rating, company, author, classification</p>
+              </div>
+              
+              <button type="button" id="uploadCsvBtn" class="analyze-btn">
+                Generate Dashboard
+              </button>
+            </div>
+          </div>
+
+          <div id="csvError" class="error" style="display: none;"></div>
+          <div id="csvLoading" class="loading" style="display: none;">
+            <p>Processing CSV file and generating dashboard...</p>
+          </div>
+          <div id="csvDashboard" class="dashboard" style="display: none;"></div>
+        </div>
+      </main>
+    </div>
+
+    <script src="main.js"></script>
+  </body>
+</html>
