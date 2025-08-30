@@ -1,6 +1,6 @@
-# Review Legitimacy Detector
+# Review Evaluation Tool
 
-A machine learning application that analyzes reviews for authenticity and policy violations using AI.
+A review application web app that analyzes reviews for authenticity and possible policy violations
 
 ## Features
 
